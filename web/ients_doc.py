@@ -7,14 +7,14 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return 'Hello World!'
-arg = False
+arg = True
 
 @app.route('/static/<filename>')
 def upload_file(filename):
     if arg:
     	return send_file('/data/{}'.format(filename))
     else:
-        return '没有权限'
+        return 'no!no!no!'
 
 
 if __name__ == '__main__':

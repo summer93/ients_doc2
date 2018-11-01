@@ -1,0 +1,23 @@
+version: '2'
+services:
+  web-ients-doc:
+    build: ./web
+    stdin_open: true
+    working_dir: /ients_doc
+    volumes:
+    - /ients_doc:/ients_doc
+    tty: true
+    ports:
+    - 5000:5000/tcp
+    
+  nginx-ients-doc:
+    image: nginx:latest
+    stdin_open: true
+    volumes:
+    - /ients_doc/ients-doc.conf:/etc/nginx/conf.d/ients-doc.conf
+    - /data:/data
+    tty: true
+    ports:
+    - 80:80/tcp
+    labels:
+      io.rancher.container.pull_image: always

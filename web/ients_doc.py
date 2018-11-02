@@ -14,7 +14,7 @@ def upload_file(filename):
     if arg:
     	return send_file('/data/{}'.format(filename))
     else:
-        return 'no!no!no!'
+        return '没有权限'
 
 
 if __name__ == '__main__':

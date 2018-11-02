@@ -1,6 +1,6 @@
 version: '2'
 services:
-  web-ients-doc:
+  web:
     build: ./web
     stdin_open: true
     working_dir: /ients_doc
@@ -10,7 +10,7 @@ services:
     ports:
     - 5000:5000/tcp
     
-  nginx-ients-doc:
+  nginx:
     image: nginx:latest
     stdin_open: true
     volumes:

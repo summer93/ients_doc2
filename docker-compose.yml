@@ -3,12 +3,13 @@ services:
   web:
     build: ./web
     stdin_open: true
-    working_dir: /ients_doc
+    working_dir: /ients_doc/web
     volumes:
     - /ients_doc:/ients_doc
     tty: true
     ports:
     - 5000:5000/tcp
+    command: uwsgi --ini flask-uwsgi.ini
     
   nginx:
     image: nginx:latest
